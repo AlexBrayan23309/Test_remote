@@ -7,7 +7,7 @@ valor = st.number_input("Ingresa el valor a convertir:", value = 0.0)
 
 if modo == "Fahrenheit a Celsius":
     celsius = (valor - 32) * 5/9
-    st.write(f"{valor} °F equivalen a {celsius:.2f} °C")
+    st.write(f"{valor} °F equivalen a {round(celsius, 2)} °C")
 else:
     fahrenheit = (valor * 9/5) + 32
-    st.write(f"{valor} °C equivalen a {fahrenheit:.2f} °F")
+    st.write(f"{valor} °C equivalen a {round(fahrenheit, 2)} °F")
