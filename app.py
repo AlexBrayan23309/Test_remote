@@ -2,12 +2,22 @@ import streamlit as st
 
 st.title("Conversor de temperatura")
 
-modo = st.radio("Selecciona el modo de conversión:", ("Fahrenheit a Celsius", "Celsius a Fahrenheit"))
+modo = st.radio("Selecciona el modo de conversión:", ("Fahrenheit a Celsius", "Celsius a Fahrenheit", "Kelvin a Celsius", "Celsius a kelvin"))
 valor = st.number_input("Ingresa el valor a convertir:", value = 0.0)
 
 if modo == "Fahrenheit a Celsius":
-    celsius = (valor - 32) * 5/9
-    st.write(f"{valor} °F equivalen a {round(celsius, 2)} °C")
-else:
-    fahrenheit = (valor * 9/5) + 32
-    st.write(f"{valor} °C equivalen a {round(fahrenheit, 2)} °F")
+    resultado = (valor - 32) * 5/9
+    st.success(f"**{round(resultado, 2)} °C**")
+    st.caption(f"{valor} °F equivalen a {round(resultado, 2)} °C")
+elif modo == "Celsius a Fahrenheit":
+    resultado = (valor * 9/5) + 32
+    st.success(f"**{round(resultado, 2)} °F**")
+    st.caption(f"{valor} °C equivalen a {round(resultado, 2)} °F")
+elif modo == "Kelvin a Celsius":
+    resultado = valor - 273.15
+    st.success(f"**{round(resultado, 2)} °C**")
+    st.caption(f"{valor} K equivalen a {round(resultado, 2)} °C")
+elif modo == "Celsius a kelvin":
+    resultado = valor + 273.15
+    st.success(f"**{round(resultado, 2)} K**")
+    st.caption(f"{valor} °C equivalen a {round(resultado, 2)} K")
