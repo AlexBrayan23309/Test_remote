@@ -21,3 +21,6 @@ elif modo == "Celsius a kelvin":
     resultado = valor + 273.15
     st.success(f"**{round(resultado, 2)} K**")
     st.caption(f"{valor} °C equivalen a {round(resultado, 2)} K")
+
+
+
